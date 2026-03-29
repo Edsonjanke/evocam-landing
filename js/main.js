@@ -60,11 +60,12 @@ const dotsContainer = document.getElementById('mockupDots');
 
 if (slides.length > 0 && dotsContainer) {
   let current = 0;
+  let autoTimer;
 
   slides.forEach((_, i) => {
     const dot = document.createElement('span');
     dot.className = 'mockup-dot' + (i === 0 ? ' active' : '');
-    dot.addEventListener('click', () => goTo(i));
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
     dotsContainer.appendChild(dot);
   });
 
@@ -79,7 +80,31 @@ if (slides.length > 0 && dotsContainer) {
     if (titleEl) titleEl.textContent = slides[current].dataset.title;
   }
 
-  setInterval(() => goTo((current + 1) % slides.length), 4000);
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo((current + 1) % slides.length), 4000);
+  }
+
+  // Arrow navigation
+  const prevArrow = document.querySelector('.mockup-prev');
+  const nextArrow = document.querySelector('.mockup-next');
+  if (prevArrow) prevArrow.addEventListener('click', (e) => { e.stopPropagation(); goTo((current - 1 + slides.length) % slides.length); resetAuto(); });
+  if (nextArrow) nextArrow.addEventListener('click', (e) => { e.stopPropagation(); goTo((current + 1) % slides.length); resetAuto(); });
+
+  // Click to zoom (open lightbox with arrows)
+  const zoomOverlay = document.getElementById('mockupZoom');
+  const heroSlideImages = Array.from(slides);
+  function openHeroLightbox() {
+    if (window._openLightbox) {
+      window._openLightbox(heroSlideImages, current);
+    }
+  }
+  if (zoomOverlay) zoomOverlay.addEventListener('click', (e) => { e.stopPropagation(); openHeroLightbox(); });
+  document.querySelector('.mockup-slides').addEventListener('click', (e) => {
+    if (e.target.classList.contains('mockup-slide')) openHeroLightbox();
+  });
+
+  resetAuto();
 }
 
 // ── Gallery Arrows ──
@@ -98,13 +123,39 @@ const lightbox = document.getElementById('lightbox');
 if (lightbox) {
   const lbImg = lightbox.querySelector('img');
   const lbClose = lightbox.querySelector('.lightbox-close');
+  const lbPrev = lightbox.querySelector('.lightbox-prev');
+  const lbNext = lightbox.querySelector('.lightbox-next');
+  let lbImages = [];
+  let lbIndex = 0;
 
-  document.querySelectorAll('.gallery-item').forEach(item => {
+  function openLightbox(images, index) {
+    lbImages = images;
+    lbIndex = index;
+    lbImg.src = lbImages[lbIndex].src;
+    lbImg.alt = lbImages[lbIndex].alt;
+    lbPrev.style.display = lbImages.length > 1 ? 'flex' : 'none';
+    lbNext.style.display = lbImages.length > 1 ? 'flex' : 'none';
+    lightbox.classList.add('open');
+  }
+
+  function lbGoTo(index) {
+    lbIndex = (index + lbImages.length) % lbImages.length;
+    lbImg.src = lbImages[lbIndex].src;
+    lbImg.alt = lbImages[lbIndex].alt;
+  }
+
+  if (lbPrev) lbPrev.addEventListener('click', (e) => { e.stopPropagation(); lbGoTo(lbIndex - 1); });
+  if (lbNext) lbNext.addEventListener('click', (e) => { e.stopPropagation(); lbGoTo(lbIndex + 1); });
+
+  // Gallery items
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryImgs = Array.from(galleryItems).map(item => item.querySelector('img'));
+  galleryItems.forEach((item, i) => {
     const img = item.querySelector('img');
     const overlay = item.querySelector('.gallery-overlay');
-    const openLb = () => { lbImg.src = img.src; lbImg.alt = img.alt; lightbox.classList.add('open'); };
-    if (overlay) overlay.addEventListener('click', openLb);
-    if (img) img.addEventListener('click', openLb);
+    const open = () => openLightbox(galleryImgs, i);
+    if (overlay) overlay.addEventListener('click', open);
+    if (img) img.addEventListener('click', open);
   });
 
   lbClose.addEventListener('click', () => lightbox.classList.remove('open'));
@@ -112,8 +163,14 @@ if (lightbox) {
     if (e.target === lightbox) lightbox.classList.remove('open');
   });
   document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') lightbox.classList.remove('open');
+    if (e.key === 'ArrowLeft') lbGoTo(lbIndex - 1);
+    if (e.key === 'ArrowRight') lbGoTo(lbIndex + 1);
   });
+
+  // Expose openLightbox for hero slideshow
+  window._openLightbox = openLightbox;
 }
 
 // ── Navbar background on scroll ──

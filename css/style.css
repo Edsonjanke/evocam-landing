@@ -8,9 +8,9 @@
   --bg-card: #0f1923;
   --bg-card-hover: #162030;
   --border: #1a2a3a;
-  --accent: #c07850;
-  --accent-glow: #d4956a;
-  --accent-dim: #7a4a30;
+  --accent: #e08040;
+  --accent-glow: #f0a060;
+  --accent-dim: #b06030;
   --green: #10b981;
   --red: #ef4444;
   --orange: #f59e0b;
@@ -143,7 +143,7 @@ nav {
   gap: 8px;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 10px;
@@ -153,7 +153,7 @@ nav {
 .nav-cta:hover {
   background: var(--accent-glow);
   transform: translateY(-1px);
-  color: #fff;
+  color: #000;
 }
 
 .nav-hamburger {
@@ -194,7 +194,7 @@ nav {
   right: -200px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(192, 120, 80, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(224, 128, 64, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -216,8 +216,8 @@ nav {
   align-items: center;
   gap: 10px;
   padding: 6px 16px;
-  background: rgba(192, 120, 80, 0.1);
-  border: 1px solid rgba(192, 120, 80, 0.25);
+  background: rgba(224, 128, 64, 0.1);
+  border: 1px solid rgba(224, 128, 64, 0.25);
   border-radius: 100px;
   font-size: 0.8rem;
   font-weight: 600;
@@ -239,13 +239,13 @@ nav {
 
 @keyframes pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 rgba(192, 120, 80, 0.5);
+    box-shadow: 0 0 0 0 rgba(224, 128, 64, 0.5);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(192, 120, 80, 0);
+    box-shadow: 0 0 0 10px rgba(224, 128, 64, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(192, 120, 80, 0);
+    box-shadow: 0 0 0 0 rgba(224, 128, 64, 0);
   }
 }
 
@@ -332,7 +332,7 @@ nav {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(192, 120, 80, 0.05);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(224, 128, 64, 0.05);
 }
 
 .mockup-bar {
@@ -365,6 +365,85 @@ nav {
   position: relative;
   width: 100%;
   overflow: hidden;
+  cursor: pointer;
+}
+
+/* ── Mockup Arrows ── */
+.mockup-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, background 0.3s, color 0.3s;
+}
+
+.mockup-slides:hover .mockup-arrow {
+  opacity: 1;
+}
+
+.mockup-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.mockup-prev { left: 12px; }
+.mockup-next { right: 12px; }
+
+.mockup-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Mockup Zoom Overlay ── */
+.mockup-zoom-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid var(--accent-dim);
+  color: var(--accent-dim);
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s, background 0.3s, color 0.3s, border-color 0.3s;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.mockup-slides:hover .mockup-zoom-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mockup-zoom-overlay:hover {
+  background: rgba(0, 0, 0, 0.95);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.mockup-zoom-overlay svg {
+  width: 20px;
+  height: 20px;
 }
 
 .mockup-slide {
@@ -485,14 +564,15 @@ nav {
 
 .section-label {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  background: rgba(192, 120, 80, 0.1);
-  padding: 5px 14px;
-  border-radius: 100px;
+  letter-spacing: 0.14em;
+  color: var(--accent-glow);
+  background: rgba(224, 128, 64, 0.12);
+  border: 1px solid rgba(224, 128, 64, 0.3);
+  padding: 8px 18px;
+  border-radius: 6px;
   margin-bottom: 16px;
 }
 
@@ -558,7 +638,7 @@ nav {
   width: 62px;
   height: 62px;
   border-radius: 14px;
-  background: rgba(192, 120, 80, 0.1);
+  background: rgba(224, 128, 64, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -615,7 +695,7 @@ nav {
 
 /* Feature variant */
 .icon-card.feature:hover {
-  border-color: rgba(192, 120, 80, 0.4);
+  border-color: rgba(224, 128, 64, 0.4);
 }
 
 .icon-card.feature:hover::before {
@@ -827,6 +907,39 @@ nav {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* ── Lightbox Arrows ── */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.lightbox-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.lightbox-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
 .gallery-caption {
   padding: 14px 20px;
   font-size: 0.85rem;
@@ -929,11 +1042,11 @@ nav {
   position: relative;
   padding: 120px 24px;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(192, 120, 80, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(192, 120, 80, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 50%, rgba(224, 128, 64, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(224, 128, 64, 0.08) 0%, transparent 60%),
     linear-gradient(180deg, var(--bg-dark) 0%, #0d1520 50%, var(--bg-dark) 100%);
-  border-top: 1px solid rgba(192, 120, 80, 0.15);
-  border-bottom: 1px solid rgba(192, 120, 80, 0.15);
+  border-top: 1px solid rgba(224, 128, 64, 0.15);
+  border-bottom: 1px solid rgba(224, 128, 64, 0.15);
   overflow: hidden;
 }
 
@@ -967,12 +1080,12 @@ nav {
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #8a4a20);
+  background: linear-gradient(135deg, var(--accent), #a05520);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 32px;
-  box-shadow: 0 8px 40px rgba(192, 120, 80, 0.3), 0 0 80px rgba(192, 120, 80, 0.1);
+  box-shadow: 0 8px 40px rgba(224, 128, 64, 0.3), 0 0 80px rgba(224, 128, 64, 0.1);
 }
 
 .auth-badge svg,
@@ -1013,7 +1126,7 @@ nav {
 
 .auth-quote {
   background: rgba(15, 25, 35, 0.6);
-  border: 1px solid rgba(192, 120, 80, 0.12);
+  border: 1px solid rgba(224, 128, 64, 0.12);
   border-radius: var(--radius);
   padding: 32px 24px;
   text-align: left;
@@ -1021,7 +1134,7 @@ nav {
 }
 
 .auth-quote:hover {
-  border-color: rgba(192, 120, 80, 0.3);
+  border-color: rgba(224, 128, 64, 0.3);
   transform: translateY(-3px);
 }
 
@@ -1249,12 +1362,12 @@ nav {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #8a4a20);
+  background: linear-gradient(135deg, var(--accent), #a05520);
   color: #fff;
   font-size: 1.1rem;
   font-weight: 900;
   letter-spacing: 0.05em;
-  box-shadow: 0 4px 24px rgba(192, 120, 80, 0.3);
+  box-shadow: 0 4px 24px rgba(224, 128, 64, 0.3);
 }
 
 /* ── 11. Pricing ── */
@@ -1282,7 +1395,7 @@ nav {
 
 .pricing-card.featured {
   border-color: var(--accent);
-  box-shadow: 0 0 40px rgba(192, 120, 80, 0.1), 0 0 0 1px var(--accent);
+  box-shadow: 0 0 40px rgba(224, 128, 64, 0.1), 0 0 0 1px var(--accent);
   position: relative;
 }
 
@@ -1302,7 +1415,7 @@ nav {
 
 .plan-badge.popular {
   color: var(--accent);
-  background: rgba(192, 120, 80, 0.1);
+  background: rgba(224, 128, 64, 0.1);
 }
 
 .plan-badge .discount {
@@ -1554,7 +1667,7 @@ nav {
 .form-group input:focus,
 .form-group select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(192, 120, 80, 0.15);
+  box-shadow: 0 0 0 3px rgba(224, 128, 64, 0.15);
 }
 
 .form-submit {
@@ -1647,11 +1760,11 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 18px 36px;
   background: linear-gradient(135deg, var(--accent), var(--accent-glow));
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 700;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 800;
   border-radius: var(--radius);
   border: none;
   cursor: pointer;
@@ -1661,8 +1774,8 @@ footer {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(192, 120, 80, 0.3);
-  color: #fff;
+  box-shadow: 0 8px 24px rgba(224, 128, 64, 0.3);
+  color: #000;
 }
 
 .btn-primary svg,
@@ -1676,11 +1789,11 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 18px 36px;
   background: transparent;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 800;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   cursor: pointer;
@@ -1922,6 +2035,83 @@ footer {
   .btn-secondary {
     justify-content: center;
   }
+
+  /* ── Mobile Font Improvements ── */
+  body {
+    font-size: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  .hero-highlights span {
+    font-size: 0.95rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .section-label {
+    font-size: 0.85rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .icon-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .icon-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .stat-desc {
+    font-size: 0.95rem;
+  }
+
+  .step-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .auth-quote p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .faq-item summary {
+    font-size: 1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .plan-feature {
+    font-size: 0.95rem;
+  }
+
+  .versus-list li {
+    font-size: 0.95rem;
+  }
+
+  /* Lightbox arrows mobile */
+  .lightbox-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox-prev { left: 12px; }
+  .lightbox-next { right: 12px; }
 }
 
 /* ── 18. Responsive: Small (max-width: 400px) ── */

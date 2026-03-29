@@ -3,403 +3,428 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EVO CNC Guia — Programe CNC sem decorar G-code</title>
-  <meta name="description" content="Software conversacional que transforma parâmetros simples em programas G-code prontos para rodar na máquina. Torno e fresa, do setup ao código final." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <title>EvoCAM — Programação CAM e Conversational para Usinagem CNC</title>
+  <meta name="description" content="EvoCAM — Software profissional de programação CAM e conversational com foco na realidade da usinagem. Torno e fresa, do setup ao código final." />
+  <meta property="og:title" content="EvoCAM — Programação CAM e Conversational para Usinagem CNC" />
+  <meta property="og:description" content="Desenvolvido para tornar a programação CNC mais rápida, padronizada e prática no dia a dia da oficina." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "EvoCAM",
+    "applicationCategory": "IndustrialApplication",
+    "operatingSystem": "Windows, Linux",
+    "description": "Software profissional de programação CAM e conversational com foco na realidade da usinagem CNC.",
+    "offers": { "@type": "AggregateOffer", "lowPrice": "250", "highPrice": "320", "priceCurrency": "BRL", "offerCount": "4" },
+    "provider": { "@type": "Organization", "name": "EVO — Evolução em Usinagem", "email": "Edsoncadcam@gmail.com" }
+  }
+  </script>
 </head>
 <body>
 
   <!-- ── Navbar ── -->
   <nav>
     <div class="nav-inner">
-      <div class="nav-logo">
-        <div class="logo-icon">E</div>
-        EVO CNC
-      </div>
+      <a href="#" class="nav-logo">
+        <img src="assets/favicon.svg" alt="EVO" class="logo-img" />
+        <span class="logo-text">Evo<span class="logo-cam">CAM</span></span>
+      </a>
       <ul class="nav-links">
-        <li><a href="#features">Recursos</a></li>
-        <li><a href="#compatibilidade">Compatibilidade</a></li>
-        <li><a href="#comparacao">Comparativo</a></li>
-        <li><a href="https://github.com/Edsonjanke/Evo-CNC-Guia" target="_blank">GitHub</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#interface">Interface</a></li>
+        <li><a href="#comparativo">Comparativo</a></li>
+        <li><a href="#precos">Planos</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a href="#download" class="nav-cta">Download</a>
+      <a href="#contato" class="nav-cta">Solicitar Demonstração</a>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- ── Hero ── -->
+  <!-- ── 1. HERO ── -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-badge">
-        <span class="pulse"></span>
-        Open Source &middot; Gratis
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="assets/favicon.svg" alt="EVO" class="hero-logo-img" />
+          <h1>Evo<span class="accent">CAM</span></h1>
+        </div>
+        <p class="hero-subtitle">Desenvolvido no chão de fábrica, por programadores e operadores de máquinas, o EvoCAM torna a programação CNC mais rápida, padronizada e prática no dia a dia da usinagem.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5547997283675" target="_blank" class="btn-whatsapp"><i data-lucide="message-circle"></i> Falar no WhatsApp</a>
+        </div>
+        <div class="hero-highlights">
+          <div class="highlight-item"><i data-lucide="timer"></i> <span><strong>Minutos</strong> em vez de horas para programar</span></div>
+          <div class="highlight-item"><i data-lucide="shield-check"></i> <span><strong>Zero retrabalho</strong> com validação visual</span></div>
+          <div class="highlight-item"><i data-lucide="repeat"></i> <span><strong>23 controles</strong> CNC suportados</span></div>
+          <div class="highlight-item"><i data-lucide="users"></i> <span><strong>Qualquer operador</strong> programa sem depender de especialista</span></div>
+        </div>
       </div>
-      <h1>
-        Programe CNC<br/>
-        <span class="gradient">sem decorar G-code</span>
-      </h1>
-      <p>
-        Software conversacional que transforma parâmetros simples em programas prontos
-        para rodar na máquina. Torno e fresa, do setup ao código final.
-      </p>
+      <div class="hero-visual" data-aos="fade-left">
+        <div class="hero-mockup">
+          <div class="mockup-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="mockup-title" id="mockupTitle">EvoCAM — Torneamento Externo</span></div>
+          <div class="mockup-slides">
+            <img src="assets/screenshots/1.png" alt="Torneamento Externo" class="mockup-slide active" data-title="EvoCAM — Torneamento Externo" />
+            <img src="assets/screenshots/2.png" alt="Torneamento Interno" class="mockup-slide" data-title="EvoCAM — Torneamento Interno" />
+            <img src="assets/screenshots/3.png" alt="Faceamento" class="mockup-slide" data-title="EvoCAM — Faceamento" />
+            <img src="assets/screenshots/simulador.png" alt="Simulador 3D" class="mockup-slide" data-title="EvoCAM — Simulador 3D" />
+            <img src="assets/screenshots/5.png" alt="Parâmetros de Corte" class="mockup-slide" data-title="EvoCAM — Parâmetros de Corte" />
+            <img src="assets/screenshots/6.png" alt="G-code Gerado" class="mockup-slide" data-title="EvoCAM — G-code Gerado" />
+          </div>
+          <div class="mockup-dots" id="mockupDots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. O QUE É ── -->
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div class="about-content" data-aos="fade-right">
+        <span class="section-label">O que é o EvoCAM</span>
+        <h2 class="section-title">Programação CNC pensada para o chão de fábrica</h2>
+        <p>O EvoCAM é um software de programação CAM e conversational voltado à realidade de pequenas e médias usinagens. Foi desenvolvido com visão prática, priorizando rapidez, clareza e padronização.</p>
+        <p>Em vez de depender de CAMs complexos ou programação manual demorada, o EvoCAM simplifica a rotina do programador CNC com uma interface direta, operações guiadas e geração de código pronta para a máquina.</p>
+      </div>
+      <div class="about-stats" data-aos="fade-left">
+        <div class="stat-block"><div class="stat-value">23</div><div class="stat-desc">Controles CNC suportados</div></div>
+        <div class="stat-block"><div class="stat-value">15+</div><div class="stat-desc">Operações prontas</div></div>
+        <div class="stat-block"><div class="stat-value">4</div><div class="stat-desc">Módulos especializados</div></div>
+        <div class="stat-block"><div class="stat-value">2</div><div class="stat-desc">Máquinas: Torno + Fresa</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. PARA QUEM É ── -->
+  <section class="audience">
+    <div class="container">
+      <div class="section-header"><span class="section-label">Para quem é</span><h2 class="section-title">Feito para quem vive a usinagem</h2></div>
+      <div class="card-grid cols-4">
+        <div class="icon-card" data-aos="fade-up"><div class="ic-icon"><i data-lucide="factory"></i></div><h3>Pequenas e Médias Usinagens</h3><p>Oficinas que precisam de agilidade sem a complexidade de CAMs caros e pesados.</p></div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="100"><div class="ic-icon"><i data-lucide="code-2"></i></div><h3>Programadores CNC</h3><p>Profissionais que querem reduzir tempo de programação e eliminar retrabalho.</p></div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="200"><div class="ic-icon"><i data-lucide="hard-hat"></i></div><h3>Operadores e Preparadores</h3><p>Quem está na máquina e precisa de programas confiáveis, prontos para rodar.</p></div>
+        <div class="icon-card" data-aos="fade-up" data-aos-delay="300"><div class="ic-icon"><i data-lucide="trending-up"></i></div><h3>Empresas em Crescimento</h3><p>Quem quer padronizar processos e escalar produção sem depender de uma pessoa só.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. DORES ── -->
+  <section class="pain-section">
+    <div class="container">
+      <div class="section-header"><span class="section-label">O problema</span><h2 class="section-title">Situações que travam a produtividade</h2></div>
+      <div class="card-grid cols-3">
+        <div class="icon-card pain" data-aos="fade-up"><div class="ic-icon"><i data-lucide="clock"></i></div><h3>Programação demorada</h3><p>Horas digitando G-code manualmente, consultando manuais e decorando códigos.</p></div>
+        <div class="icon-card pain" data-aos="fade-up" data-aos-delay="50"><div class="ic-icon"><i data-lucide="user-x"></i></div><h3>Dependência de pessoas</h3><p>Só uma pessoa sabe programar. Quando ela falta, a produção para.</p></div>
+        <div class="icon-card pain" data-aos="fade-up" data-aos-delay="100"><div class="ic-icon"><i data-lucide="alert-triangle"></i></div><h3>Erros na programação</h3><p>Um sinal trocado, uma coordenada errada. Peça refugada, ferramenta quebrada.</p></div>
+        <div class="icon-card pain" data-aos="fade-up" data-aos-delay="150"><div class="ic-icon"><i data-lucide="shuffle"></i></div><h3>Falta de padronização</h3><p>Cada programador faz de um jeito. Sem padrão, sem rastreabilidade.</p></div>
+        <div class="icon-card pain" data-aos="fade-up" data-aos-delay="200"><div class="ic-icon"><i data-lucide="graduation-cap"></i></div><h3>Treinamento difícil</h3><p>Ensinar programação CNC do zero demora meses. Turnover alto piora tudo.</p></div>
+        <div class="icon-card pain" data-aos="fade-up" data-aos-delay="250"><div class="ic-icon"><i data-lucide="puzzle"></i></div><h3>CAMs complexos demais</h3><p>Softwares pesados, caros e cheios de funções que a oficina não precisa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. BENEFÍCIOS ── -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header"><span class="section-label">Benefícios</span><h2 class="section-title">O que muda com o EvoCAM</h2></div>
+      <div class="card-grid cols-3">
+        <div class="icon-card benefit" data-aos="fade-up"><div class="ic-icon"><i data-lucide="rocket"></i></div><h3>Mais Agilidade</h3><p>Programe em minutos o que antes levava horas. Operações guiadas aceleram tudo.</p></div>
+        <div class="icon-card benefit" data-aos="fade-up" data-aos-delay="50"><div class="ic-icon"><i data-lucide="copy-check"></i></div><h3>Mais Padronização</h3><p>Todo programa sai no mesmo padrão, independente de quem programou.</p></div>
+        <div class="icon-card benefit" data-aos="fade-up" data-aos-delay="100"><div class="ic-icon"><i data-lucide="shield-check"></i></div><h3>Menos Erros</h3><p>Validação visual antes de rodar. Simulador integrado previne problemas.</p></div>
+        <div class="icon-card benefit" data-aos="fade-up" data-aos-delay="150"><div class="ic-icon"><i data-lucide="sparkles"></i></div><h3>Mais Simplicidade</h3><p>Interface limpa e objetiva. Sem menus infinitos ou curva de aprendizado longa.</p></div>
+        <div class="icon-card benefit" data-aos="fade-up" data-aos-delay="200"><div class="ic-icon"><i data-lucide="user-check"></i></div><h3>Mais Autonomia</h3><p>Qualquer operador treinado consegue gerar programas. Sem depender de especialista.</p></div>
+        <div class="icon-card benefit" data-aos="fade-up" data-aos-delay="250"><div class="ic-icon"><i data-lucide="bar-chart-3"></i></div><h3>Mais Produtividade</h3><p>Menos tempo programando, mais tempo produzindo. Máquina rodando é dinheiro entrando.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. FUNCIONALIDADES ── -->
+  <section class="features-section" id="funcionalidades">
+    <div class="container">
+      <div class="section-header"><span class="section-label">Funcionalidades</span><h2 class="section-title">Tudo que a sua oficina precisa</h2></div>
+      <div class="card-grid cols-4">
+        <div class="icon-card feature" data-aos="fade-up"><div class="ic-icon"><i data-lucide="message-square-code"></i></div><h3>Programação Conversational</h3><p>Preencha parâmetros em uma interface guiada e o programa é gerado automaticamente.</p></div>
+        <div class="icon-card feature" data-aos="fade-up" data-aos-delay="50"><div class="ic-icon"><i data-lucide="file-code-2"></i></div><h3>Geração de Programa</h3><p>G-code completo, formatado e pronto para enviar à máquina.</p></div>
+        <div class="icon-card feature" data-aos="fade-up" data-aos-delay="100"><div class="ic-icon"><i data-lucide="library"></i></div><h3>Biblioteca de Operações</h3><p>15+ operações prontas: desbaste, acabamento, rosca, cavidade, furação e mais.</p></div>
+        <div class="icon-card feature" data-aos="fade-up" data-aos-delay="150"><div class="ic-icon"><i data-lucide="sliders-horizontal"></i></div><h3>Parâmetros de Corte</h3><p>Defina avanço, rotação, profundidade. Visualize o que cada campo faz.</p></div>
+        <div class="icon-card feature" data-aos="fade-up" data-aos-delay="200"><div class="ic-icon"><i data-lucide="monitor-cog"></i></div><h3>Interface Industrial</h3><p>Visual técnico, escuro e profissional. Feito para o chão de fábrica.</p></div>
+        <div class="icon-card feature" data-aos="fade-up" data-aos-delay="250"><div class="ic-icon"><i data-lucide="rotate-cw"></i></div><h3>Torno e Fresa</h3><p>Módulos dedicados para torneamento e fresamento, conversational e CAM.</p></div>
+        <div class="icon-card feature" data-aos="fade-up" data-aos-delay="300"><div class="ic-icon"><i data-lucide="cpu"></i></div><h3>Pós-processamento</h3><p>23 controles CNC suportados. Fanuc, Haas, Siemens, Mazak e mais 19.</p></div>
+        <div class="icon-card feature" data-aos="fade-up" data-aos-delay="350"><div class="ic-icon"><i data-lucide="git-branch"></i></div><h3>Evolução Contínua</h3><p>Atualizações constantes com novas operações, controles e melhorias.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. COMO FUNCIONA ── -->
+  <section class="how-section">
+    <div class="container">
+      <div class="section-header"><span class="section-label">Como funciona</span><h2 class="section-title">Três passos. Programa pronto.</h2></div>
+      <div class="steps-row">
+        <div class="step-card" data-aos="fade-up"><div class="step-num">1</div><h3>Informe os parâmetros</h3><p>Selecione a operação, insira medidas, defina ferramentas e condições de corte.</p></div>
+        <div class="step-sep"><i data-lucide="chevron-right"></i></div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="150"><div class="step-num">2</div><h3>Organize a lógica</h3><p>Combine operações na sequência correta. Visualize o toolpath antes de gerar.</p></div>
+        <div class="step-sep"><i data-lucide="chevron-right"></i></div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="300"><div class="step-num">3</div><h3>Gere o programa</h3><p>Revise, simule e exporte o G-code formatado para o controle da sua máquina.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. INTERFACE ── -->
+  <section class="interface-section" id="interface">
+    <div class="container">
+      <div class="section-header"><span class="section-label">Interface</span><h2 class="section-title">Veja o EvoCAM em ação</h2><p class="section-subtitle">Interface profissional, visual técnico e simulação integrada.</p></div>
+      <div class="gallery-wrapper">
+        <button class="gallery-arrow gallery-prev" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
+        <div class="gallery-scroll" id="galleryScroll">
+          <div class="gallery-track">
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/1.png" alt="Torneamento Externo" loading="lazy" /><div class="gallery-caption">Torneamento Externo</div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/2.png" alt="Torneamento Interno" loading="lazy" /><div class="gallery-caption">Torneamento Interno</div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/3.png" alt="Faceamento" loading="lazy" /><div class="gallery-caption">Faceamento</div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/4.png" alt="Operações CNC" loading="lazy" /><div class="gallery-caption">Operações CNC</div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/5.png" alt="Parâmetros de Corte" loading="lazy" /><div class="gallery-caption">Parâmetros de Corte</div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/6.png" alt="G-code Gerado" loading="lazy" /><div class="gallery-caption">G-code Gerado</div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/7.png" alt="Multi-controle" loading="lazy" /><div class="gallery-caption">Saída Multi-controle</div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Clique para ampliar</span></div><img src="assets/screenshots/simulador.png" alt="Simulador 3D" loading="lazy" /><div class="gallery-caption">Simulador de Toolpath</div></div>
+          </div>
+        </div>
+        <button class="gallery-arrow gallery-next" aria-label="Próximo"><i data-lucide="chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. AUTORIDADE ── -->
+  <section class="authority-section">
+    <div class="authority-bg">
+      <div class="container authority-box" data-aos="fade-up">
+        <div class="auth-badge"><i data-lucide="award"></i></div>
+        <h2>Desenvolvido com visão prática<br/>de <span class="auth-highlight">usinagem real</span></h2>
+        <div class="auth-divider"></div>
+        <div class="auth-quotes">
+          <div class="auth-quote" data-aos="fade-up" data-aos-delay="100">
+            <i data-lucide="factory"></i>
+            <p>Nasceu da experiência com <strong>máquinas CNC reais</strong>, problemas reais e prazos reais. Cada funcionalidade resolve algo que atrapalha a rotina da oficina.</p>
+          </div>
+          <div class="auth-quote" data-aos="fade-up" data-aos-delay="200">
+            <i data-lucide="settings"></i>
+            <p>Software construído com <strong>mentalidade industrial</strong> — feito para quem precisa de resultado, não de complexidade.</p>
+          </div>
+          <div class="auth-quote" data-aos="fade-up" data-aos-delay="300">
+            <i data-lucide="target"></i>
+            <p>Não é mais um CAM genérico. É uma ferramenta pensada para a <strong>realidade do chão de fábrica brasileiro</strong>.</p>
+          </div>
+        </div>
+        <a href="#contato" class="btn-primary auth-cta"><i data-lucide="send"></i> Solicitar Demonstração</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Marquee Compatibilidade ── -->
+  <section class="compat-section" id="compatibilidade">
+    <div class="container"><div class="section-header"><span class="section-label">Compatibilidade</span><h2 class="section-title">23 controles CNC suportados</h2></div></div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="mq-name">Fanuc</span><span class="mq-ctrl">0i · 30i · 31i · 32i</span></div>
+        <div class="marquee-item"><span class="mq-name">Haas</span><span class="mq-ctrl">NGC · Classic</span></div>
+        <div class="marquee-item"><span class="mq-name">Siemens</span><span class="mq-ctrl">Sinumerik 808D · 828D · 840D</span></div>
+        <div class="marquee-item"><span class="mq-name">Mazak</span><span class="mq-ctrl">Mazatrol · SmoothX</span></div>
+        <div class="marquee-item"><span class="mq-name">Mitsubishi</span><span class="mq-ctrl">M80 · M800 · C80</span></div>
+        <div class="marquee-item"><span class="mq-name">Heidenhain</span><span class="mq-ctrl">TNC 640 · TNC7</span></div>
+        <div class="marquee-item"><span class="mq-name">GSK</span><span class="mq-ctrl">980 · 988T · 218MC</span></div>
+        <div class="marquee-item"><span class="mq-name">Fagor</span><span class="mq-ctrl">8055 · 8065 · 8070</span></div>
+        <div class="marquee-item"><span class="mq-name">Syntec</span><span class="mq-ctrl">6MB · 21MA · 60MA</span></div>
+        <div class="marquee-item"><span class="mq-name">HNC</span><span class="mq-ctrl">808D · 818D · 848D</span></div>
+        <div class="marquee-item"><span class="mq-name">KND</span><span class="mq-ctrl">K1000 · K2000</span></div>
+        <div class="marquee-item"><span class="mq-name">SZGH</span><span class="mq-ctrl">880TC · 990MC</span></div>
+        <div class="marquee-item"><span class="mq-name">Delta</span><span class="mq-ctrl">NC300 · NC311A</span></div>
+        <div class="marquee-item"><span class="mq-name">Weihong</span><span class="mq-ctrl">NK260 · NK280</span></div>
+        <div class="marquee-item"><span class="mq-name">RichAuto</span><span class="mq-ctrl">DSP A11 · A18</span></div>
+        <div class="marquee-item"><span class="mq-name">DDCS</span><span class="mq-ctrl">V3.1 · V4.1</span></div>
+        <div class="marquee-item"><span class="mq-name">Centroid</span><span class="mq-ctrl">Acorn · M400</span></div>
+        <div class="marquee-item"><span class="mq-name">NCStudio</span><span class="mq-ctrl">V5 · V8 · V10</span></div>
+        <div class="marquee-item"><span class="mq-name">Mach3</span><span class="mq-ctrl">Mach3 · Mach4</span></div>
+        <div class="marquee-item"><span class="mq-name">LinuxCNC</span><span class="mq-ctrl">2.8+</span></div>
+        <div class="marquee-item"><span class="mq-name">MCS</span><span class="mq-ctrl">Educacional</span></div>
+        <div class="marquee-item"><span class="mq-name">Adetech</span><span class="mq-ctrl">CNC4940 · 4960</span></div>
+        <div class="marquee-item"><span class="mq-name">Fanuc</span><span class="mq-ctrl">0i · 30i · 31i · 32i</span></div>
+        <div class="marquee-item"><span class="mq-name">Haas</span><span class="mq-ctrl">NGC · Classic</span></div>
+        <div class="marquee-item"><span class="mq-name">Siemens</span><span class="mq-ctrl">Sinumerik 808D · 828D · 840D</span></div>
+        <div class="marquee-item"><span class="mq-name">Mazak</span><span class="mq-ctrl">Mazatrol · SmoothX</span></div>
+        <div class="marquee-item"><span class="mq-name">Mitsubishi</span><span class="mq-ctrl">M80 · M800 · C80</span></div>
+        <div class="marquee-item"><span class="mq-name">Heidenhain</span><span class="mq-ctrl">TNC 640 · TNC7</span></div>
+        <div class="marquee-item"><span class="mq-name">GSK</span><span class="mq-ctrl">980 · 988T · 218MC</span></div>
+        <div class="marquee-item"><span class="mq-name">Fagor</span><span class="mq-ctrl">8055 · 8065 · 8070</span></div>
+        <div class="marquee-item"><span class="mq-name">Syntec</span><span class="mq-ctrl">6MB · 21MA · 60MA</span></div>
+        <div class="marquee-item"><span class="mq-name">HNC</span><span class="mq-ctrl">808D · 818D · 848D</span></div>
+        <div class="marquee-item"><span class="mq-name">KND</span><span class="mq-ctrl">K1000 · K2000</span></div>
+        <div class="marquee-item"><span class="mq-name">SZGH</span><span class="mq-ctrl">880TC · 990MC</span></div>
+        <div class="marquee-item"><span class="mq-name">Delta</span><span class="mq-ctrl">NC300 · NC311A</span></div>
+        <div class="marquee-item"><span class="mq-name">Weihong</span><span class="mq-ctrl">NK260 · NK280</span></div>
+        <div class="marquee-item"><span class="mq-name">RichAuto</span><span class="mq-ctrl">DSP A11 · A18</span></div>
+        <div class="marquee-item"><span class="mq-name">DDCS</span><span class="mq-ctrl">V3.1 · V4.1</span></div>
+        <div class="marquee-item"><span class="mq-name">Centroid</span><span class="mq-ctrl">Acorn · M400</span></div>
+        <div class="marquee-item"><span class="mq-name">NCStudio</span><span class="mq-ctrl">V5 · V8 · V10</span></div>
+        <div class="marquee-item"><span class="mq-name">Mach3</span><span class="mq-ctrl">Mach3 · Mach4</span></div>
+        <div class="marquee-item"><span class="mq-name">LinuxCNC</span><span class="mq-ctrl">2.8+</span></div>
+        <div class="marquee-item"><span class="mq-name">MCS</span><span class="mq-ctrl">Educacional</span></div>
+        <div class="marquee-item"><span class="mq-name">Adetech</span><span class="mq-ctrl">CNC4940 · 4960</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. COMPARATIVO ── -->
+  <section class="comparison-section" id="comparativo">
+    <div class="container">
+      <div class="section-header"><span class="section-label">Comparativo</span><h2 class="section-title">Antes e depois do EvoCAM</h2></div>
+      <div class="versus-grid">
+        <div class="versus-col versus-before" data-aos="fade-right">
+          <div class="versus-header"><i data-lucide="x-circle"></i> Programação Manual</div>
+          <div class="versus-item"><i data-lucide="clock"></i><div><strong>Velocidade</strong><p>Lenta — horas por programa</p></div></div>
+          <div class="versus-item"><i data-lucide="shuffle"></i><div><strong>Padronização</strong><p>Cada um faz de um jeito</p></div></div>
+          <div class="versus-item"><i data-lucide="alert-triangle"></i><div><strong>Risco de erro</strong><p>Alto — digitação manual</p></div></div>
+          <div class="versus-item"><i data-lucide="repeat"></i><div><strong>Repetição</strong><p>Refaz tudo do zero</p></div></div>
+          <div class="versus-item"><i data-lucide="brain"></i><div><strong>Facilidade</strong><p>Exige experiência avançada</p></div></div>
+          <div class="versus-item"><i data-lucide="pause-circle"></i><div><strong>Produtividade</strong><p>Máquina parada esperando</p></div></div>
+        </div>
+        <div class="versus-divider" data-aos="fade-up"><span>VS</span></div>
+        <div class="versus-col versus-after" data-aos="fade-left">
+          <div class="versus-header"><i data-lucide="check-circle-2"></i> Com EvoCAM</div>
+          <div class="versus-item"><i data-lucide="zap"></i><div><strong>Velocidade</strong><p>Rápida — minutos por programa</p></div></div>
+          <div class="versus-item"><i data-lucide="copy-check"></i><div><strong>Padronização</strong><p>Padrão consistente sempre</p></div></div>
+          <div class="versus-item"><i data-lucide="shield-check"></i><div><strong>Risco de erro</strong><p>Baixo — validação visual integrada</p></div></div>
+          <div class="versus-item"><i data-lucide="recycle"></i><div><strong>Repetição</strong><p>Reutiliza operações e templates</p></div></div>
+          <div class="versus-item"><i data-lucide="sparkles"></i><div><strong>Facilidade</strong><p>Interface guiada e intuitiva</p></div></div>
+          <div class="versus-item"><i data-lucide="rocket"></i><div><strong>Produtividade</strong><p>Programa pronto, máquina rodando</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PLANOS ── -->
+  <section class="pricing-section" id="precos">
+    <div class="container">
+      <div class="section-header"><span class="section-label">Planos</span><h2 class="section-title">Invista no que dá resultado</h2><p class="section-subtitle">Setup único + mensalidade por módulo. Torno Conversacional, Torno CAM, Fresa Conversacional, Fresa CAM.</p></div>
+      <div class="pricing-plans">
+        <div class="pricing-card" data-aos="fade-up">
+          <div class="plan-badge">Mensal</div>
+          <div class="plan-price">R$320<span>/mês por módulo</span></div>
+          <ul class="plan-features">
+            <li><i data-lucide="check"></i> Acesso completo ao módulo</li>
+            <li><i data-lucide="check"></i> Atualizações incluídas</li>
+            <li><i data-lucide="check"></i> Suporte técnico</li>
+            <li><i data-lucide="check"></i> 23 controles CNC</li>
+            <li><i data-lucide="check"></i> Simulador 2D + 3D</li>
+            <li><i data-lucide="check"></i> Cancele quando quiser</li>
+          </ul>
+          <a href="https://wa.me/5547997283675" target="_blank" class="btn-secondary btn-block">Contratar Mensal</a>
+        </div>
+        <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="plan-badge popular">Anual <span class="discount">-22%</span></div>
+          <div class="plan-price">R$250<span>/mês por módulo</span></div>
+          <ul class="plan-features">
+            <li><i data-lucide="check"></i> Tudo do plano mensal</li>
+            <li><i data-lucide="check"></i> Economia de R$840/ano</li>
+            <li><i data-lucide="check"></i> Prioridade no suporte</li>
+            <li><i data-lucide="check"></i> 23 controles CNC</li>
+            <li><i data-lucide="check"></i> Simulador 2D + 3D</li>
+            <li><i data-lucide="check"></i> Melhor custo-benefício</li>
+          </ul>
+          <a href="https://wa.me/5547997283675" target="_blank" class="btn-primary btn-block">Contratar Anual</a>
+        </div>
+      </div>
+      <div class="pricing-extras">
+        <div class="setup-box" data-aos="fade-up"><div class="setup-inner"><div><h3>Setup &amp; Instalação</h3><p>Configuração inicial, instalação e treinamento básico. Pagamento único.</p></div><div class="setup-price"><div class="plan-price">R$1.200<span> único</span></div></div></div></div>
+        <div class="setup-box" data-aos="fade-up"><div class="setup-inner"><div><h3>Personalizações Extras</h3><p>Pós-processadores customizados, integrações específicas e adaptações sob medida.</p></div><div class="setup-price"><a href="https://wa.me/5547997283675" target="_blank" class="btn-secondary">Sob Consulta</a></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 11. CTA FORTE ── -->
+  <section class="cta-section">
+    <div class="container cta-box" data-aos="fade-up">
+      <h2>Pronto para transformar a programação da sua oficina?</h2>
+      <p>Solicite uma demonstração gratuita e veja como o EvoCAM pode acelerar sua produção.</p>
       <div class="hero-buttons">
-        <a href="#download" class="btn-primary">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Baixar Gratis
-        </a>
-        <a href="https://github.com/Edsonjanke/Evo-CNC-Guia" target="_blank" class="btn-secondary">
-          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          Ver no GitHub
-        </a>
-      </div>
-
-      <!-- Terminal Mock -->
-      <div class="hero-terminal fade-in">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">G-code gerado pelo EVO CNC</span>
-        </div>
-        <div class="terminal-body">
-          <div><span class="comment">( Torneamento Externo - Desbaste )</span></div>
-          <div><span class="gcode">G21</span> <span class="comment">( Milimetros )</span></div>
-          <div><span class="gcode">G28</span> U0 W0</div>
-          <div><span class="gcode">T0101</span> <span class="comment">( Ferramenta 1 )</span></div>
-          <div><span class="gcode">G97</span> S<span class="number">1200</span> <span class="gcode">M03</span></div>
-          <div><span class="gcode">G00</span> X<span class="number">52.0</span> Z<span class="number">2.0</span></div>
-          <div><span class="gcode">G71</span> U<span class="number">1.5</span> R<span class="number">0.5</span></div>
-          <div><span class="gcode">G71</span> P10 Q20 U<span class="number">0.3</span> W<span class="number">0.1</span> F<span class="number">0.25</span></div>
-          <div><span class="keyword">N10</span> <span class="gcode">G00</span> X<span class="number">20.0</span></div>
-          <div><span class="keyword">N20</span> <span class="gcode">G01</span> Z<span class="number">-45.0</span> F<span class="number">0.15</span></div>
-          <div><span class="gcode">G70</span> P10 Q20</div>
-          <div><span class="gcode">G28</span> U0 W0</div>
-          <div><span class="gcode">M30</span></div>
-        </div>
+        <a href="#contato" class="btn-primary"><i data-lucide="send"></i> Solicitar Demonstração</a>
+        <a href="https://wa.me/5547997283675" target="_blank" class="btn-whatsapp"><i data-lucide="message-circle"></i> Falar no WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- ── Problema ── -->
-  <section class="problem">
+  <!-- ── 12. FAQ ── -->
+  <section class="faq-section" id="faq">
     <div class="container">
-      <span class="section-label">O problema</span>
-      <h2 class="section-title">Programar CNC na mão custa caro</h2>
-      <p class="section-subtitle">Tempo perdido, erros de digitação e refugo. Tudo isso some quando você tem a ferramenta certa.</p>
-      <div class="problem-grid">
-        <div class="problem-card fade-in">
-          <span class="problem-icon">&#9201;</span>
-          <h3>Tempo perdido</h3>
-          <p>Horas digitando G-code manualmente, consultando manuais e decorando códigos que mudam de um controle pra outro.</p>
-        </div>
-        <div class="problem-card fade-in">
-          <span class="problem-icon">&#9888;</span>
-          <h3>Erros caros</h3>
-          <p>Um sinal trocado, uma coordenada errada. O resultado: peça refugada, ferramenta quebrada, máquina parada.</p>
-        </div>
-        <div class="problem-card fade-in">
-          <span class="problem-icon">&#128176;</span>
-          <h3>CAM inacessível</h3>
-          <p>Softwares CAM profissionais custam milhares de reais por ano. Pra uma oficina pequena, não faz sentido.</p>
-        </div>
+      <div class="section-header"><span class="section-label">Perguntas frequentes</span><h2 class="section-title">Dúvidas comuns sobre o EvoCAM</h2></div>
+      <div class="faq-list">
+        <details class="faq-item" data-aos="fade-up"><summary>O EvoCAM serve para torno ou fresa?</summary><p>Para os dois. O software tem módulos dedicados: Torno Conversacional, Torno CAM, Fresa Conversacional e Fresa CAM.</p></details>
+        <details class="faq-item" data-aos="fade-up"><summary>Preciso saber CAM avançado para usar?</summary><p>Não. A interface guia você passo a passo, desde a escolha da operação até a geração do G-code final.</p></details>
+        <details class="faq-item" data-aos="fade-up"><summary>Serve para pequenas empresas e oficinas?</summary><p>Sim, foi exatamente para esse público que o EvoCAM foi criado. Sem a complexidade de CAMs industriais pesados.</p></details>
+        <details class="faq-item" data-aos="fade-up"><summary>Posso solicitar uma demonstração?</summary><p>Sim. Preencha o formulário abaixo ou nos chame no WhatsApp. Fazemos uma apresentação completa.</p></details>
+        <details class="faq-item" data-aos="fade-up"><summary>O sistema está em evolução?</summary><p>Sim. O EvoCAM recebe atualizações constantes com novas operações, controles e melhorias.</p></details>
+        <details class="faq-item" data-aos="fade-up"><summary>Ele realmente reduz a programação manual?</summary><p>Sim. Operações que levariam horas são geradas em minutos. O G-code sai completo e formatado.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- ── 3 Passos ── -->
-  <section class="steps">
+  <!-- ── 13. FORMULÁRIO ── -->
+  <section class="form-section" id="contato">
     <div class="container">
-      <div style="text-align:center">
-        <span class="section-label">Como funciona</span>
-        <h2 class="section-title" style="margin-bottom:60px">Três passos. Zero complicação.</h2>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card fade-in">
-          <div class="step-number">1</div>
-          <h3>Escolha a operação</h3>
-          <p>Torneamento, faceamento, rosca, cavidade, furação... selecione o que precisa fazer.</p>
-        </div>
-        <div class="step-card fade-in">
-          <div class="step-number">2</div>
-          <h3>Preencha os valores</h3>
-          <p>Diâmetros, profundidades, avanços. Interface visual mostra exatamente o que cada campo significa.</p>
-        </div>
-        <div class="step-card fade-in">
-          <div class="step-number">3</div>
-          <h3>Copie o G-code</h3>
-          <p>Programa pronto, formatado pro seu controle. Simule o toolpath antes de rodar na máquina.</p>
-        </div>
-      </div>
+      <div class="section-header"><span class="section-label">Contato</span><h2 class="section-title">Quero conhecer o EvoCAM</h2><p class="section-subtitle">Preencha o formulário e entraremos em contato para agendar uma demonstração.</p></div>
+      <form class="form-grid" id="formContato">
+        <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Seu nome completo" required /></div>
+        <div class="form-group"><label for="empresa">Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" /></div>
+        <div class="form-group"><label for="whatsapp">WhatsApp</label><input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required /></div>
+        <div class="form-group"><label for="cidade">Cidade / Estado</label><input type="text" id="cidade" name="cidade" placeholder="Ex: Joinville / SC" /></div>
+        <div class="form-group"><label for="maquina">Tipo de Máquina</label><select id="maquina" name="maquina"><option value="">Selecione...</option><option value="torno">Torno CNC</option><option value="fresa">Fresa / Centro de Usinagem</option><option value="ambos">Torno + Fresa</option><option value="outro">Outro</option></select></div>
+        <div class="form-group"><label for="interesse">Interesse Principal</label><select id="interesse" name="interesse"><option value="">Selecione...</option><option value="demonstracao">Solicitar demonstração</option><option value="precos">Conhecer preços</option><option value="teste">Testar o software</option><option value="parceria">Parceria comercial</option></select></div>
+        <div class="form-submit"><button type="submit" class="btn-primary btn-block"><i data-lucide="send"></i> Quero conhecer o EvoCAM</button></div>
+      </form>
     </div>
   </section>
 
-  <!-- ── Features ── -->
-  <section class="features" id="features">
-    <div class="container">
-      <div style="text-align:center">
-        <span class="section-label">Recursos</span>
-        <h2 class="section-title" style="margin-bottom:60px">Tudo que você precisa no chão de fábrica</h2>
-      </div>
-      <div class="features-grid">
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon">&#9881;</div>
-          <h3>Torneamento Conversacional</h3>
-          <p>7 operações prontas: OD, ID, faceamento, rosca, chanfro, rasgo e furação. Preencha e gere.</p>
-          <div class="feature-tags">
-            <span class="tag">G71/G70</span>
-            <span class="tag">G76 Rosca</span>
-            <span class="tag">G74 Furação</span>
-            <span class="tag">Ciclos automáticos</span>
-          </div>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon">&#9881;</div>
-          <h3>Fresamento Conversacional</h3>
-          <p>8 operações guiadas: faceamento, cavidades, furação em padrão, perfil, rasgo reto e mais.</p>
-          <div class="feature-tags">
-            <span class="tag">Pocket retangular</span>
-            <span class="tag">Pocket circular</span>
-            <span class="tag">Furação array</span>
-            <span class="tag">Perfil</span>
-          </div>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon">&#9654;</div>
-          <h3>Simulador de Toolpath</h3>
-          <p>Visualize o caminho da ferramenta em 2D e 3D antes de ligar a máquina. Play, pause, step, breakpoints.</p>
-          <div class="feature-tags">
-            <span class="tag">2D + 3D</span>
-            <span class="tag">Timeline</span>
-            <span class="tag">DRO digital</span>
-            <span class="tag">0.25x a 8x</span>
-          </div>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon">&#128260;</div>
-          <h3>13 Controles CNC</h3>
-          <p>Mesmo programa, saída formatada para o controle da sua máquina. Fanuc, Haas, Siemens e mais 10.</p>
-          <div class="feature-tags">
-            <span class="tag">Fanuc</span>
-            <span class="tag">Haas</span>
-            <span class="tag">Siemens</span>
-            <span class="tag">Mach3</span>
-            <span class="tag">+9</span>
-          </div>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon">&#128194;</div>
-          <h3>Importação CAD</h3>
-          <p>Abra arquivos STEP direto no software. Geometria real, sem redesenhar.</p>
-          <div class="feature-tags">
-            <span class="tag">STEP</span>
-            <span class="tag">OpenCASCADE</span>
-          </div>
-        </div>
-
-        <div class="feature-card fade-in">
-          <div class="feature-icon">&#128187;</div>
-          <h3>Desktop Nativo</h3>
-          <p>Roda 100% offline no PC da oficina. Sem internet, sem assinatura, sem depender de nuvem.</p>
-          <div class="feature-tags">
-            <span class="tag">Windows</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Offline</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Compatibilidade ── -->
-  <section class="compat" id="compatibilidade">
-    <div class="container">
-      <span class="section-label">Compatibilidade</span>
-      <h2 class="section-title">Seu controle está na lista?</h2>
-      <p class="section-subtitle">Pós-processador dedicado para cada fabricante. G-code formatado exatamente como o controle espera.</p>
-      <div class="compat-grid">
-        <div class="compat-item fade-in">
-          <div class="name">Fanuc</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Haas</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Siemens</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Mazak</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Mitsubishi</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Heidenhain</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">GSK</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Fagor</div>
-          <div class="type">Industrial</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">MCS</div>
-          <div class="type">Educacional</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Mach3</div>
-          <div class="type">Hobby / CNC DIY</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">LinuxCNC</div>
-          <div class="type">Open Source</div>
-        </div>
-        <div class="compat-item fade-in">
-          <div class="name">Adetech</div>
-          <div class="type">Industrial</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Stats ── -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item fade-in">
-          <div class="stat-number">15</div>
-          <div class="stat-label">Operações prontas</div>
-        </div>
-        <div class="stat-item fade-in">
-          <div class="stat-number">13</div>
-          <div class="stat-label">Controles suportados</div>
-        </div>
-        <div class="stat-item fade-in">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Máquinas: Torno + Fresa</div>
-        </div>
-        <div class="stat-item fade-in">
-          <div class="stat-number">R$0</div>
-          <div class="stat-label">Gratis e open source</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Comparação ── -->
-  <section class="comparison" id="comparacao">
-    <div class="container">
-      <div style="text-align:center">
-        <span class="section-label">Comparativo</span>
-        <h2 class="section-title" style="margin-bottom:60px">EVO vs alternativas</h2>
-      </div>
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Critério</th>
-              <th class="highlight">EVO CNC Guia</th>
-              <th>Programação manual</th>
-              <th>CAM industrial</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Custo</td>
-              <td class="highlight"><span class="check">Gratis</span></td>
-              <td>Gratis</td>
-              <td><span class="cross">R$5.000+/ano</span></td>
-            </tr>
-            <tr>
-              <td>Curva de aprendizado</td>
-              <td class="highlight"><span class="check">Minutos</span></td>
-              <td><span class="cross">Meses</span></td>
-              <td><span class="partial">Semanas</span></td>
-            </tr>
-            <tr>
-              <td>Simulação</td>
-              <td class="highlight"><span class="check">2D + 3D integrado</span></td>
-              <td><span class="cross">Nenhuma</span></td>
-              <td><span class="check">Avançada</span></td>
-            </tr>
-            <tr>
-              <td>Multi-controle</td>
-              <td class="highlight"><span class="check">13 controles</span></td>
-              <td><span class="cross">1 por vez</span></td>
-              <td><span class="check">Configurável</span></td>
-            </tr>
-            <tr>
-              <td>Funciona offline</td>
-              <td class="highlight"><span class="check">Sim</span></td>
-              <td><span class="check">Sim</span></td>
-              <td><span class="partial">Depende</span></td>
-            </tr>
-            <tr>
-              <td>Torno + Fresa</td>
-              <td class="highlight"><span class="check">Ambos</span></td>
-              <td><span class="check">Ambos</span></td>
-              <td><span class="check">Ambos</span></td>
-            </tr>
-            <tr>
-              <td>Importação CAD</td>
-              <td class="highlight"><span class="check">STEP</span></td>
-              <td><span class="cross">Nenhuma</span></td>
-              <td><span class="check">Múltiplos</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CTA Final ── -->
-  <section class="cta-final" id="download">
-    <div class="container">
-      <h2>Pronto pra programar<br/><span style="background:linear-gradient(135deg,var(--accent-glow),var(--accent-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">sem complicação?</span></h2>
-      <p>Baixe o EVO CNC Guia, abra no PC da oficina e comece a gerar programas agora.</p>
-      <div class="hero-buttons">
-        <a href="https://github.com/Edsonjanke/Evo-CNC-Guia/releases" target="_blank" class="btn-primary">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Baixar para Windows
-        </a>
-        <a href="https://github.com/Edsonjanke/Evo-CNC-Guia" target="_blank" class="btn-secondary">
-          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          Código fonte
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Footer ── -->
+  <!-- ── 14. FOOTER ── -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">EVO CNC Guia</div>
-        <p>&copy; 2026 &middot; Open Source &middot; MIT License</p>
+      <div class="footer-col">
+        <div class="footer-brand-logo">
+          <img src="assets/favicon.svg" alt="EVO" class="footer-logo" />
+          <span class="logo-text">Evo<span class="logo-cam">CAM</span></span>
+        </div>
+        <p>Programação CAM e conversational com foco na realidade da usinagem CNC.</p>
       </div>
-      <div class="footer-links">
-        <a href="https://github.com/Edsonjanke/Evo-CNC-Guia" target="_blank">GitHub</a>
-        <a href="https://github.com/Edsonjanke/Evo-CNC-Guia/issues" target="_blank">Reportar Bug</a>
-        <a href="https://github.com/Edsonjanke/Evo-CNC-Guia/releases" target="_blank">Releases</a>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#interface">Interface</a>
+        <a href="#comparativo">Comparativo</a>
+        <a href="#precos">Planos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5547997283675" target="_blank"><i data-lucide="message-circle"></i> (47) 99728-3675</a>
+        <a href="mailto:Edsoncadcam@gmail.com"><i data-lucide="mail"></i> Edsoncadcam@gmail.com</a>
       </div>
     </div>
+    <div class="footer-bottom"><p>&copy; 2026 EvoCAM &middot; Desenvolvido por EVO SI &middot; Todos os direitos reservados</p></div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Fechar">&times;</button>
+    <img src="" alt="Preview" />
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/main.js"></script>
 
 </body>

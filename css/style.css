@@ -244,19 +244,25 @@ nav.scrolled {
 
 @media (max-width: 768px) {
   .led-ticker {
+    position: relative;
     top: 64px;
-    padding: 8px 16px;
+    padding: 16px 20px;
+    gap: 6px;
+    background: rgba(12, 26, 40, 0.95);
+    border-bottom: 1px solid rgba(204, 109, 46, 0.15);
   }
 
   .led-ticker-text {
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
     white-space: normal;
     text-align: center;
+    line-height: 1.4;
   }
 
   .led-ticker-text:last-child {
-    font-size: 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -2395,52 +2401,85 @@ footer::before {
 
   /* ── Mobile Font Improvements ── */
   body {
-    font-size: 1rem;
-  }
-
-  .hero-pitch {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
   }
 
   .hero-desc {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 
   .about-content p {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     line-height: 1.7;
   }
 
+  .section-label {
+    font-size: 0.8rem;
+  }
+
   .icon-card h3 {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
   }
 
   .icon-card p {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
   }
 
   .stat-desc {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .step-card h3 {
+    font-size: 1.1rem;
   }
 
   .step-card p {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
 
   .auth-quote p {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .versus-item strong {
+    font-size: 1.05rem;
+  }
+
+  .versus-item p {
+    font-size: 1rem;
+  }
+
+  .plan-features li {
+    font-size: 1rem;
   }
 
   .faq-item summary {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 
   .faq-item p {
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .highlight-item {
+    font-size: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 1rem;
   }
 
   /* Lightbox arrows mobile */
@@ -2460,15 +2499,11 @@ footer::before {
 /* ── 18. Responsive: Small (max-width: 400px) ── */
 @media (max-width: 400px) {
   .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero-pitch {
-    font-size: 1.1rem;
+    font-size: 2.2rem;
   }
 
   .section-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .stat-value {

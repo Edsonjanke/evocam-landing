@@ -173,10 +173,12 @@ if (lightbox) {
   window._openLightbox = openLightbox;
 }
 
-// ── Navbar background on scroll ──
+// ── Navbar background on scroll + ticker hide ──
 const nav = document.querySelector('nav');
+const ticker = document.querySelector('.led-ticker');
 if (nav) {
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
+    if (ticker) ticker.classList.toggle('hidden', window.scrollY > 80);
   });
 }

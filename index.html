@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
@@ -49,14 +49,23 @@
     </div>
   </nav>
 
+  <!-- ── LED Ticker ── -->
+  <div class="led-ticker">
+    <span class="led-ticker-text">Programação CNC pensada para o chão de fábrica</span>
+    <span class="led-ticker-text">Feito por programadores para programadores</span>
+  </div>
+
   <!-- ── 1. HERO ── -->
   <section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-scanline"></div>
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-logo">
-        </div>
+        <h1>Evo<span class="accent">CAM</span></h1>
+        <p class="hero-desc">Do setup ao código final. Torno e fresa, 23 controles suportados. Programe em minutos o que antes levava horas.</p>
         <div class="hero-buttons">
-          <a href="https://wa.me/5547997283675" target="_blank" class="btn-whatsapp"><i data-lucide="message-circle"></i> Falar no WhatsApp</a>
+          <a href="#contato" class="btn-primary"><i data-lucide="send"></i> Solicitar Demo</a>
+          <a href="https://wa.me/5547997283675" target="_blank" class="btn-whatsapp"><i data-lucide="message-circle"></i> WhatsApp</a>
         </div>
         <div class="hero-highlights">
           <div class="highlight-item"><i data-lucide="timer"></i> <span><strong>Minutos</strong> em vez de horas para programar</span></div>
@@ -90,7 +99,7 @@
     <div class="container about-grid">
       <div class="about-content" data-aos="fade-right">
         <span class="section-label">O que é o EvoCAM</span>
-        <h2 class="section-title">Programação CNC pensada para o chão de fábrica</h2>
+        <h2 class="section-title">Programação CNC pensada para o chão de fábrica — Feito por programadores para programadores</h2>
         <p>O EvoCAM é um software de programação CAM e conversational voltado à realidade de pequenas e médias usinagens. Foi desenvolvido com visão prática, priorizando rapidez, clareza e padronização.</p>
         <p>Em vez de depender de CAMs complexos ou programação manual demorada, o EvoCAM simplifica a rotina do programador CNC com uma interface direta, operações guiadas e geração de código pronta para a máquina.</p>
       </div>
@@ -149,7 +158,7 @@
   <!-- ── 6. FUNCIONALIDADES ── -->
   <section class="features-section" id="funcionalidades">
     <div class="container">
-      <div class="section-header"><span class="section-label">Funcionalidades</span><h2 class="section-title">Tudo que a sua oficina precisa</h2></div>
+      <div class="section-header"><span class="section-label">Funcionalidades</span><h2 class="section-title">Tudo que sua empresa precisa</h2></div>
       <div class="card-grid cols-4">
         <div class="icon-card feature" data-aos="fade-up"><div class="ic-icon"><i data-lucide="message-square-code"></i></div><h3>Programação Conversational</h3><p>Preencha parâmetros em uma interface guiada e o programa é gerado automaticamente.</p></div>
         <div class="icon-card feature" data-aos="fade-up" data-aos-delay="50"><div class="ic-icon"><i data-lucide="file-code-2"></i></div><h3>Geração de Programa</h3><p>G-code completo, formatado e pronto para enviar à máquina.</p></div>
